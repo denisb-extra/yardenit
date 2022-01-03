@@ -1,0 +1,190 @@
+$mw: 950px;
+$tw: 1200px;
+$lw: 1370px;
+
+@mixin border {
+	$red: random(256)-1;
+	$green: random(256)-1;
+	$blue: random(256)-1;
+ 	border: 1px solid red;
+ 	border-color: rgb($red, $green, $blue);
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	  color: $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	  color: $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	  color: $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	  color: $color;
+	}
+}
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Fonts */
+@font-face { 
+	font-family: 'roboto-light'; 
+	src: url('../fonts/Roboto-Light.ttf') format('truetype'); 
+} 
+@mixin f-l {
+	font-family: 'roboto-light';
+	font-weight: 300;
+}
+
+@font-face { 
+	font-family: 'roboto-regular'; 
+	src: url('../fonts/Roboto-Regular.ttf') format('truetype'); 
+} 
+@mixin f-r {
+	font-family: 'roboto-regular';
+	font-weight: 400;
+}
+
+@font-face { 
+	font-family: 'roboto-medium'; 
+	src: url('../fonts/Roboto-Medium.ttf') format('truetype'); 
+} 
+@mixin f-m {
+	font-family: 'roboto-medium';
+	font-weight: 500;
+}
+
+@font-face { 
+	font-family: 'roboto-bold'; 
+	src: url('../fonts/Roboto-Bold.ttf') format('truetype'); 
+} 
+@mixin f-b {
+	font-family: 'roboto-bold';
+	font-weight: 700;
+}
+
+@font-face { 
+	font-family: 'roboto-black'; 
+	src: url('../fonts/Roboto-Black.ttf') format('truetype'); 
+} 
+@mixin f-bl {
+	font-family: 'roboto-black';
+	font-weight: 900;
+}
+
+@font-face { 
+	font-family: 'visby-bold'; 
+	src: url('../fonts/VisbyCF-Bold.ttf') format('truetype'); 
+} 
+@mixin f-visby-b {
+	font-family: 'visby-bold';
+	font-weight: 700;
+}
+
+@font-face { 
+	font-family: 'visby-extra-bold'; 
+	src: url('../fonts/VisbyCF-ExtraBold.ttf') format('truetype'); 
+} 
+@mixin f-visby-xb {
+	font-family: 'visby-extra-bold';
+	font-weight: 800;
+}
+
+@font-face { 
+	font-family: 'qanaya-regular'; 
+	src: url('../fonts/Qanaya-Regular.ttf') format('truetype'); 
+} 
+@mixin f-qanaya-r {
+	font-family: 'qanaya-regular';
+	font-weight: 400;
+}
+
+@font-face { 
+	font-family: 'qanaya-round-regular'; 
+	src: url('../fonts/Qanaya-Round.ttf') format('truetype'); 
+} 
+@mixin f-qanaya-round-r {
+	font-family: 'qanaya-round-regular';
+	font-weight: 400;
+}
+
+@font-face { 
+	font-family: 'qanaya-bold'; 
+	src: url('../fonts/Qanaya-Bold.ttf') format('truetype'); 
+} 
+@mixin f-qanaya-b {
+	font-family: 'qanaya-bold';
+	font-weight: 700;
+}
+
+
+/* /Fonts */
+
+
+
+/* Global */
+html {
+	margin: 0 !important;
+	overflow-x: hidden;
+}
+body {
+	position: relative;
+	margin: 0;
+  	padding: 0;
+  	overflow-x: hidden;
+  	@include f-r;
+  	font-size: 18px;
+
+	@media only screen and (max-width : $mw) {
+		padding-top: 62px;
+	}
+}
+
+input {
+	border: none;
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	direction: ltr;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+ul {
+	-webkit-padding-start: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+@import 'parts';
+@import 'index';
+@import 'inner';
+@import 'templates';
+@import 'woo-default';
+@import 'woo';
