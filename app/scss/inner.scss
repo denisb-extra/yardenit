@@ -1379,6 +1379,9 @@ section.product {
         }
 
         .quantity {
+            &.hidden {
+                display: none;
+            }
             .label {
                 @include f-m;
                 font-size: 20px;
@@ -1582,7 +1585,20 @@ section.product {
 }
 /* --------------------- /Section product ---------------------- */
 
-
+.woocommerce_gc_giftcard_form {
+    input, textarea {
+        @include f-r;
+        font-size: 12px;
+        color: #6E7076;
+        @include placeholder-color(#6E7076);
+        background: #F7F8FB;
+        padding: 13px 15px;
+        border-radius: 20px;
+        width: 100%;
+        border: none;
+        margin-top: 10px;
+    }
+}
 
 /* ---------------------- product-rows ---------------------- */
 .product-rows {
