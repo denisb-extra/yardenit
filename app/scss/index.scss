@@ -1072,7 +1072,7 @@ section.best-sellers {
         color: #313B60;
         padding: 10px;
         &.has-arrow {
-            background: url("../images/icons/rd.svg") no-repeat left 10px center;
+            background: url("../images/icons/rdb.svg") no-repeat left 10px center;
             
         }
         cursor: pointer;
@@ -2459,6 +2459,59 @@ footer {
             }
 		}
 	}
+
+    .cont-form {
+        padding: 30px;
+        text-align: center;
+        background-position: center;
+        .wpcf7 {
+            margin-top: 35px;
+            .wpcf7-form-control-wrap {
+                margin-top: 10px;
+
+            }
+    
+            .wpcf7-list-item {
+                @include f-r;
+                font-size: 17px;
+                color: #4D4D4D;
+                margin-top: 20px;
+                margin-left: 0;
+                display: block;
+                input {
+                    width: auto;
+                    margin-right: 10px;
+                }
+            }
+    
+            button {
+                background: #79B974;
+                @include f-b;
+                font-size: 15px;
+                color: #fff;
+                text-align: center;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                max-width: 100%;
+                margin-top: 30px;
+                padding: 11px 25px;
+                cursor: pointer;
+                transition: 0.5s;
+                &:hover {
+                    background: #264759;
+                }
+                span, img {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        @media only screen and (max-width : $mw) {
+            padding: 15px;
+        }
+    }
 
     .close {
         position: absolute;

@@ -1165,7 +1165,7 @@ section.best-sellers {
     display: none;
     text-align: center; }
     .tabs-menu .title-mobile.has-arrow {
-      background: url("../images/icons/rd.svg") no-repeat left 10px center; }
+      background: url("../images/icons/rdb.svg") no-repeat left 10px center; }
   .tabs-menu .items {
     display: flex;
     justify-content: center; }
@@ -2140,6 +2140,48 @@ footer {
         font-size: 0; }
         .popup .container .inner .banner img {
           max-width: 100%; }
+  .popup .cont-form {
+    padding: 30px;
+    text-align: center;
+    background-position: center; }
+    .popup .cont-form .wpcf7 {
+      margin-top: 35px; }
+      .popup .cont-form .wpcf7 .wpcf7-form-control-wrap {
+        margin-top: 10px; }
+      .popup .cont-form .wpcf7 .wpcf7-list-item {
+        font-family: 'roboto-regular';
+        font-weight: 400;
+        font-size: 17px;
+        color: #4D4D4D;
+        margin-top: 20px;
+        margin-left: 0;
+        display: block; }
+        .popup .cont-form .wpcf7 .wpcf7-list-item input {
+          width: auto;
+          margin-right: 10px; }
+      .popup .cont-form .wpcf7 button {
+        background: #79B974;
+        font-family: 'roboto-bold';
+        font-weight: 700;
+        font-size: 15px;
+        color: #fff;
+        text-align: center;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        max-width: 100%;
+        margin-top: 30px;
+        padding: 11px 25px;
+        cursor: pointer;
+        transition: 0.5s; }
+        .popup .cont-form .wpcf7 button:hover {
+          background: #264759; }
+        .popup .cont-form .wpcf7 button span, .popup .cont-form .wpcf7 button img {
+          display: inline-block;
+          vertical-align: middle; }
+    @media only screen and (max-width: 950px) {
+      .popup .cont-form {
+        padding: 15px; } }
   .popup .close {
     position: absolute;
     top: 10px;
