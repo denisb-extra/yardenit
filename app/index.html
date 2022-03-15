@@ -259,6 +259,42 @@
 		</a>
 	</div>
 
+
+	<div class="popup open">
+		<div class="container">
+			<div class="inner">
+				<div class="close">
+					<img src="images/icons/close.svg" alt="" title="">
+				</div>
+				<a href="#" class="banner">
+					<img src="images/index/banner.png" alt="">
+				</a>
+				
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function ($) {
+			$(document).click(function(event) { 
+				$target = $(event.target);
+				if(!$target.closest('.popup .inner').length) {
+					$(".popup").removeClass("open");   
+				}
+			});
+			
+			$(".popup .close").on("click", function(e){
+				e.preventDefault();
+				var popup = $(this).closest(".popup");
+				popup.removeClass("open");
+			});
+			
+			setTimeout(function(){
+				$(".popup").addClass("open"); 
+			}, 5000);
+		});
+	</script>
+
 	<section class="slider-top">
 		<div class="bg">
 			<img src="images/index/bg-top.png" alt="" class="main">
@@ -983,6 +1019,10 @@
 
 					<div class="content white">
 						<p>The Jordan River Living Stones is a wall made of personal ceramic tiles, installed one by one, creating an uplifting presentation from our dear friends of Yardenit all around the globe.</p>
+						<p>The Jordan River Living Stones is a wall made of personal ceramic tiles, installed one by one, creating an uplifting presentation from our dear friends of Yardenit all around the globe.</p>
+						<p>The Jordan River Living Stones is a wall made of personal ceramic tiles, installed one by one, creating an uplifting presentation from our dear friends of Yardenit all around the globe.</p>
+						<p>The Jordan River Living Stones is a wall made of personal ceramic tiles, installed one by one, creating an uplifting presentation from our dear friends of Yardenit all around the globe.</p>
+						<p>The Jordan River Living Stones is a wall made of personal ceramic tiles, installed one by one, creating an uplifting presentation from our dear friends of Yardenit all around the globe.</p>
 					</div>
 
 					<div class="gifts white">
@@ -1324,7 +1364,9 @@
                 </div>	
 
 				<div class="section-bottom">
-					<div class="empty"></div>
+					<div class="content">
+						<p>We always stand for our products quality. <br>	30 days money back guaranteed.</p>
+					</div>
 					<div class="wrapper-social">
 						<p class="title">FOLLOW US</p>
 						<div class="social">

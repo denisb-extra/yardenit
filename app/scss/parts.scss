@@ -53,6 +53,14 @@ section {
     	padding-left: 25px;
 	}
 
+	a {
+		color: #264759;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
 	img {
 		max-width: 100%;
 	}
@@ -87,6 +95,12 @@ br.spacing {
 	&.row-reverse {
 		flex-direction: row-reverse;
 	}
+	&.full {
+		.part {
+			width: auto;
+			flex: 1 0;
+		}
+	}
 	.part {
 		width: 50%;
 		padding: 0 45px;
@@ -109,6 +123,12 @@ br.spacing {
 			width: 100%;
 			&:nth-child(2) {
 				margin-top: 25px;
+			}
+		}
+		&.full {
+			.part {
+				width: 100%;
+				flex: 1 100%;
 			}
 		}
 	}

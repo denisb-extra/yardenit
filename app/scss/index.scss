@@ -466,6 +466,9 @@ header {
         .search-and-icons {
             .search-field {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
             }
             .icons {
                 .icon {
@@ -510,7 +513,7 @@ header {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    right: 25px;
+    right: 0px;
     z-index: 999;
     .item {
         display: flex;
@@ -1502,6 +1505,7 @@ section.events {
 /* ---------------------- Section stones ---------------------- */
 section.stones {
     background: url("../images/index/bg-stones.png") no-repeat center center;
+    background-size: auto 100%;
     .parts {
         .part {
             &:nth-child(1) {
@@ -1885,28 +1889,28 @@ section.gallery-grid {
 
     @media only screen and (max-width : $mw) {
         .container {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(7, 180px);
-
+            display: flex;
+            flex-wrap: wrap;
             .box {
-                &:nth-child(1) {
-                    grid-column: 1 / 3;
-                    grid-row: 1 / 1; 
+                width: 50%;
+                &:nth-child(3n + 3) {
+                    width: 100%;
+                    .inner {
+                        height: 200px;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                } 
+                .inner {
+                    height: 150px;
+                    @include flex-center;
+                    img {
+                        position: static;
+                        transform: none;
+                    }
                 }
-                &:nth-child(4) {
-                    grid-column: 1 / 1;
-                    grid-row: 3 / 5; 
-                }
-                &:nth-child(5) {
-                    grid-column: 2 / 2;
-                    grid-row: 4 / 6; 
-                }
-
-                &:nth-child(7) {
-                    grid-column: 1 / 3;
-                    grid-row: 5 / 5; 
-                }
-            } 
+            }
         }
 
         &.min {
@@ -2136,6 +2140,7 @@ footer {
                     }
                     input {
                         background: none;
+                        width: 100%;
                     }
                     button {
                         position: absolute;
@@ -2161,9 +2166,9 @@ footer {
 		padding-top: 270px;
 		padding-bottom: 70px;
 		text-align: center;
-		overflow: auto;
+		overflow-x: hidden;
 
-		background: #fff url("../images/index/bg-footer.png") no-repeat center top;
+		background: #fff url("../images/index/bg-footer.png") no-repeat center bottom;
 		.cols {
 	        display: flex;
 	        justify-content: space-between;
@@ -2228,6 +2233,11 @@ footer {
             > div {
                 flex-grow: 1;
                 flex-basis: 0;
+            }
+
+            .content {
+                @include f-l;
+                font-size: 16px;
             }
         }
 	}
@@ -2325,6 +2335,7 @@ footer {
                 flex-direction: column;
                 margin-top: 25px;
                 align-items: center;
+                
                 .cards {
                     margin-top: 20px;
                 }
@@ -2392,4 +2403,86 @@ footer {
             }
         }
     }
+}
+
+
+
+
+.popup {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+
+	transition: 0.5s;
+	visibility: hidden;
+	opacity: 0;
+	padding: 10px;
+	&.open {
+		visibility: visible;
+		opacity: 1;
+		.container {
+			.inner {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+	.container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.inner {
+			background: #fff;
+			max-width: 1400px;
+			max-height: 90vh;
+			width: auto;
+			margin: auto;
+			
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			transition: 0.5s;
+			opacity: 0;
+			transform: scale(0.8);
+            .banner {
+                display: block;
+                font-size: 0;
+                img {
+                    max-width: 100%;
+                }
+            }
+		}
+	}
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+
+        width: 35px;
+        height: 35px;
+        @include flex-center;
+        border-radius: 100%;
+        background: #79B974;
+        img {
+            max-width: 50%;
+        }
+    }
+
+
+	@media only screen and (max-width : $lw) {
+	
+	}
+
+	@media only screen and (max-width : $mw) {
+	
+	}
+
 }
