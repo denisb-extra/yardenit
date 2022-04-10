@@ -7567,6 +7567,28 @@ section.woo {
   position: relative;
   top: -4px; }
 
+#order_review .product-name {
+  display: flex;
+  align-items: center; }
+  #order_review .product-name .product-thumb {
+    width: 60px;
+    flex-shrink: 0;
+    margin-right: 10px; }
+    #order_review .product-name .product-thumb img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      margin: 0; }
+
+#order_review .shop_table {
+  display: block; }
+  #order_review .shop_table thead, #order_review .shop_table tbody, #order_review .shop_table tfoot {
+    display: block; }
+  #order_review .shop_table tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
 section.woo .woocommerce-MyAccount-navigation {
   position: relative;
   z-index: 999; }
@@ -7632,7 +7654,7 @@ section.woo .woocommerce-MyAccount-navigation {
     font-weight: 400;
     font-size: 20px;
     color: #fff;
-    background: #0C3D59;
+    background: #fff;
     padding: 3px;
     cursor: pointer;
     transition: 0.25s;
@@ -7648,6 +7670,15 @@ section.woo .woocommerce-MyAccount-navigation {
       background: #0C3D59; }
 
 @media only screen and (max-width: 950px) {
+  form.checkout {
+    width: 100%; }
+  .col2-set, #order_review {
+    width: 100%;
+    float: none;
+    margin-left: 0; }
+    .col2-set .button, #order_review .button {
+      padding: 10px 25px;
+      font-size: 18px !important; }
   .container-product {
     display: flex;
     align-items: flex-start;
@@ -7767,11 +7798,9 @@ section.woo .woocommerce-MyAccount-navigation {
 
 .free-shipping-checkout {
   background: #79B974;
-  width: 41.1764705882%;
-  float: left;
+  margin-top: 10px;
   margin-left: 0;
   clear: left;
-  margin-top: 15px;
   display: flex;
   align-items: center;
   padding: 5px;
@@ -7789,12 +7818,36 @@ section.woo .woocommerce-MyAccount-navigation {
       width: 100%; } }
 
 ul#shipping_method li {
-  white-space: nowrap; }
+  white-space: nowrap;
+  display: flex;
+  align-items: center; }
 
 ul#shipping_method li label, ul#shipping_method li input {
   white-space: normal;
-  display: inline-block;
+  display: inline;
   vertical-align: middle; }
 
 ul#shipping_method li input {
   margin-right: 10px; }
+
+.cols-checkout {
+  display: flex;
+  margin: 0 -25px; }
+  .cols-checkout .col {
+    width: 50%;
+    padding: 0 25px; }
+  .cols-checkout #order_review_heading, .cols-checkout #order_review {
+    width: 100%;
+    float: none; }
+  .cols-checkout #order_review_heading {
+    padding: 10px; }
+  .cols-checkout #order_review {
+    padding: 0;
+    margin-top: 10px; }
+  .cols-checkout .woocommerce-billing-fields__field-wrapper {
+    padding: 0 !important; }
+  @media only screen and (max-width: 950px) {
+    .cols-checkout {
+      flex-wrap: wrap; }
+      .cols-checkout .col {
+        width: 100%; } }
