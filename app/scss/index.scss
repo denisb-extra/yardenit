@@ -2416,6 +2416,7 @@ footer {
 	bottom: 0;
 	right: 0;
 	background: rgba(0, 0, 0, 0.5);
+    
 
 	transition: 0.5s;
 	visibility: hidden;
@@ -2463,7 +2464,17 @@ footer {
     .cont-form {
         padding: 30px;
         text-align: center;
-        background-position: center;
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        max-width: 775px;
+        width: 775px;
+        .form-title {
+            @include f-b;
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 25px;
+        }
         .wpcf7 {
             margin-top: 35px;
             .wpcf7-form-control-wrap {
@@ -2474,7 +2485,7 @@ footer {
             .wpcf7-list-item {
                 @include f-r;
                 font-size: 17px;
-                color: #4D4D4D;
+                color: #fff;
                 margin-top: 20px;
                 margin-left: 0;
                 display: block;
@@ -2534,8 +2545,11 @@ footer {
 	
 	}
 
-	@media only screen and (max-width : $mw) {
-	
+	@media only screen and (max-width : 775px) {
+        .cont-form {
+            width: auto;
+            background-size: auto 100%;
+        }
 	}
 
 }

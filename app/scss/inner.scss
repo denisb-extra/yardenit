@@ -2067,7 +2067,7 @@ section.site.links {
 /* ---------------------- Section live ---------------------- */
 section.live {
     background: #000 url("../images/inner/bg-live.jpg") no-repeat center center;
-
+    background-size: auto 100%;
     .boxes {
         display: flex;
         flex-wrap: wrap;

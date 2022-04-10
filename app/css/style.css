@@ -2143,7 +2143,17 @@ footer {
   .popup .cont-form {
     padding: 30px;
     text-align: center;
-    background-position: center; }
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    max-width: 775px;
+    width: 775px; }
+    .popup .cont-form .form-title {
+      font-family: 'roboto-bold';
+      font-weight: 700;
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 25px; }
     .popup .cont-form .wpcf7 {
       margin-top: 35px; }
       .popup .cont-form .wpcf7 .wpcf7-form-control-wrap {
@@ -2152,7 +2162,7 @@ footer {
         font-family: 'roboto-regular';
         font-weight: 400;
         font-size: 17px;
-        color: #4D4D4D;
+        color: #fff;
         margin-top: 20px;
         margin-left: 0;
         display: block; }
@@ -2196,6 +2206,10 @@ footer {
     background: #79B974; }
     .popup .close img {
       max-width: 50%; }
+  @media only screen and (max-width: 775px) {
+    .popup .cont-form {
+      width: auto;
+      background-size: auto 100%; } }
 
 /* ---------------------- Section top-inner ---------------------- */
 section.top-inner {
@@ -3678,7 +3692,8 @@ section.site.links .image {
 
 /* ---------------------- Section live ---------------------- */
 section.live {
-  background: #000 url("../images/inner/bg-live.jpg") no-repeat center center; }
+  background: #000 url("../images/inner/bg-live.jpg") no-repeat center center;
+  background-size: auto 100%; }
   section.live .boxes {
     display: flex;
     flex-wrap: wrap;
@@ -7124,7 +7139,8 @@ a img.aligncenter {
 
 /* ---------------------- Section woo ---------------------- */
 .woocommerce-message {
-  width: 100%;
+  width: auto;
+  display: inline-block;
   padding: 10px;
   margin-bottom: 10px; }
   .woocommerce-message[role="alert"] {
@@ -7139,8 +7155,10 @@ a img.aligncenter {
     float: right;
     padding-right: 0;
     padding-left: 20px;
+    margin-left: 20px;
     border-right: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.25); }
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    color: #79B974; }
 
 .woocommerce-error {
   background-color: #a31e23;
